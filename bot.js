@@ -3,7 +3,7 @@ var app = express();
 var url = require('url');
 var request = require('request');
 
-var format = ".json";
+// var format = ".json";
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -19,7 +19,7 @@ app.post('/post', function(req, res){
   var title = req.body.text;
 
   var parsed_url = url.format({
-    pathname: 'http://www.omdbapi.com/?t=' + title + format,
+    pathname: 'http://www.omdbapi.com/?t=' + title
   });
 
   console.log(parsed_url);
