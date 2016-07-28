@@ -20,13 +20,15 @@ app.post('/post', function(req, res){
 
   console.log('title: ', title);
 
-  var parsed_url = url.format({
-    pathname: 'http://www.omdbapi.com/?t=' + title
-  });
+  // var parsed_url = url.format({
+  //   pathname: 'http://www.omdbapi.com/?t=' + title
+  // });
 
-  console.log(parsed_url);
+  // console.log(parsed_url);
 
-  request(parsed_url, function (error, response, body) {
+  var address = 'http://www.omdbapi.com/?t=' + title;
+
+  request(address, function (error, response, body) {
     if(error){
       console.log('error: ', error);
     }
