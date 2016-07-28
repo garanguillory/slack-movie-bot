@@ -18,6 +18,8 @@ app.get('/', function(req, res){
 app.post('/post', function(req, res){
   var title = req.body.text;
 
+  console.log('title: ', title);
+
   var parsed_url = url.format({
     pathname: 'http://www.omdbapi.com/?t=' + title
   });
@@ -25,6 +27,9 @@ app.post('/post', function(req, res){
   console.log(parsed_url);
 
   request(parsed_url, function (error, response, body) {
+    if(error){
+      console.log('error: ', error);
+    }
     if (!error && response.statusCode == 200) {
       var data = JSON.parse(body);
       var year = data.Year;
