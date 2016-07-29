@@ -34,22 +34,24 @@ app.post('/post', function(req, res){
     }
     if (!error && response.statusCode == 200) {
       var data = JSON.parse(body);
-      var year = data.Year;
-      var rated = data.Rated;
-      var released = data.Released;
-      var runtime = data.Runtime;
-      var genre = data.Genre;
-      var director = data.Director;
-      var writer = data.Writer;
+      // var year = data.Year;
+      // var rated = data.Rated;
+      // var released = data.Released;
+      // var runtime = data.Runtime;
+      // var genre = data.Genre;
+      // var director = data.Director;
+      // var writer = data.Writer;
+
+      var {Title, Year, Rated, Released, Runtime, Genre, Director, Writer, Actors, Plot, Language, Country, Awards, Poster, Metascore, imdbRating, imdbVotes, imdbID, Type, Response} = data;
 
 
       var body = {
         response_type: "in_channel",
         "attachments": [
           {
-            "text": "Director: " + director + "\n"
-                  + "Rated: " + rated + "\n"
-                  + "Runtime: " + runtime
+            "text": "Director: " + Director + "\n"
+                  + "Rated: " + Rated + "\n"
+                  + "Runtime: " + Runtime
           }
         ]
       };
