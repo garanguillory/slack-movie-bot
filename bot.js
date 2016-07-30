@@ -39,22 +39,21 @@ app.post('/post', function(req, res){
       var released = data.Released;
       var runtime = data.Runtime;
       var genre = data.Genre;
-      // var director = data.Director;
+      var director = data.Director;
       var writer = data.Writer;
-
-      var {Director: director} = data;
-
-      // var {Title, Year, Rated, Released, Runtime, Genre, Director, Writer, Actors, Plot, Language, Country, Awards, Poster, Metascore, imdbRating, imdbVotes, imdbID, Type, Response} = data;
+      var actors = data.Actors;
+      var plot = data.Plot;
+      var metascore = data.Metascore;
+      var imdbRating = data.imdbRating;
 
 
       var body = {
         response_type: "in_channel",
         "attachments": [
           {
-            "text": "Director: " + director + "\n"
-                  + "Rated: " + rated + "\n"
-                  + "Runtime: " + runtime + "\n"
-                  + "data: " + data
+            "text": "Title: " + title + " || Director: " + director + " || Writer: " + writer + "\n"
+                  + "Rated: " + rated + " || Runtime: " + runtime + " || imdbRating: " + imdbRating + "\n"
+                  + "plot: " + plot
           }
         ]
       };
