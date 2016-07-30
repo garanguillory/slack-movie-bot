@@ -39,8 +39,10 @@ app.post('/post', function(req, res){
       var released = data.Released;
       var runtime = data.Runtime;
       var genre = data.Genre;
-      var director = data.Director;
+      // var director = data.Director;
       var writer = data.Writer;
+
+      var {Director: director} = data;
 
       // var {Title, Year, Rated, Released, Runtime, Genre, Director, Writer, Actors, Plot, Language, Country, Awards, Poster, Metascore, imdbRating, imdbVotes, imdbID, Type, Response} = data;
 
