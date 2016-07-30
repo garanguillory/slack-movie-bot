@@ -51,7 +51,8 @@ app.post('/post', function(req, res){
           {
             "text": "Director: " + director + "\n"
                   + "Rated: " + rated + "\n"
-                  + "Runtime: " + runtime
+                  + "Runtime: " + runtime + "\n"
+                  + "data: " + data
           }
         ]
       };
